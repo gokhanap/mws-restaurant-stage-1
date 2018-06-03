@@ -63,6 +63,13 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
+    option.id = cuisine + "-opt";
+   
+    const label = document.createElement('label');
+    label.innerHTML = cuisine;
+    label.htmlFor = cuisine + "-opt";
+       
+    select.append(label);
     select.append(option);
   });
 }
@@ -141,6 +148,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.name;
   li.append(image);
 
   const name = document.createElement('h1');
