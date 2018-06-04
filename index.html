@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css">
     <link async href="https://fonts.googleapis.com/css?family=Ubuntu:700|Ubuntu+Condensed" rel="stylesheet">
-    <script type="text/javascript" src="js/sw/index.js"></script>
+    <script type="text/javascript" src="sw.js"></script>
     <title>Restaurant Reviews</title>
   </head>
   
@@ -24,7 +24,7 @@
       <section id="map-container">
         <div id="map" role="application"></div>
       </section>
-      <section>
+      <section id="restaurants-list-container">
         <div class="filter-options">
           
           <div class="filter-heading-container">
@@ -33,7 +33,8 @@
           
           <div class="neighborhoods-container">
             <label for="neighborhoods-select">Neighborhoods Selection</label>
-            <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()"> 
+            <select id="neighborhoods-select" name="neighborhoods" 
+            size="1" onchange="updateRestaurants()"> 
               <label for="all-nb-opt">All Neighborhoods</label>
               <option value="all" id="all-nb-opt">All Neighborhoods</option>
             </select>
@@ -41,14 +42,15 @@
           
           <div class="cuisines-container">
             <label for="cuisines-select">Cuisines Selection</label>
-            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+            <select id="cuisines-select" name="cuisines" 
+            size="1" onchange="updateRestaurants()">
               <label for="all-cu-opt">All Neighborhoods</label>
               <option value="all" id="all-cu-opt">All Cuisines</option>
             </select>
           </div>
           
         </div>
-        <ul id="restaurants-list"></ul>
+        <ul id="restaurants-list" aria-live="assertive"></ul>
       </section>
     </main>
     

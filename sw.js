@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/js/sw/index.js').then(function(registration) {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
     }, function(err) {
@@ -69,30 +69,3 @@ self.addEventListener('fetch', function(event) {
       })
     );
 });
-
-// self.addEventListener('install', function(event) {
-//   event.waitUntil(
-
-//   );
-// });
-
-
-// self.addEventListener('fetch', function(event) {
-//   event.respondWith(
-//     fetch(event.request).then(function(response) {
-//       if (response.status === 404) {
-//         // TODO: instead, respond with the gif at
-//         // /img/dr-evil.gif
-//         // using a network request
-//         return fetch('/img/dr-evil.gif');
-//       }
-//     return response;
-//   }).catch(function() {
-//     return new Response("Failed");
-//   })
-//   );
-// });
-  
-//   console.log(even.request);    
-
-// });
